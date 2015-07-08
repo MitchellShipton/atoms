@@ -32,6 +32,7 @@
 		14E6DFD51B4DE14E001BBEF8 /* CornerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E6DFD41B4DE14E001BBEF8 /* CornerExtensions.swift */; };
 		14E6DFD91B4DE50E001BBEF8 /* ContainerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E6DFD81B4DE50E001BBEF8 /* ContainerExtension.swift */; };
 		14E6DFDB1B4DE602001BBEF8 /* TimerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E6DFDA1B4DE602001BBEF8 /* TimerExtension.swift */; };
+		14E6DFDD1B4DEA53001BBEF8 /* UpdateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E6DFDC1B4DEA53001BBEF8 /* UpdateExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		14E6DFD41B4DE14E001BBEF8 /* CornerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerExtensions.swift; sourceTree = "<group>"; };
 		14E6DFD81B4DE50E001BBEF8 /* ContainerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerExtension.swift; sourceTree = "<group>"; };
 		14E6DFDA1B4DE602001BBEF8 /* TimerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerExtension.swift; sourceTree = "<group>"; };
+		14E6DFDC1B4DEA53001BBEF8 /* UpdateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 				14E6DFD41B4DE14E001BBEF8 /* CornerExtensions.swift */,
 				14E6DFD81B4DE50E001BBEF8 /* ContainerExtension.swift */,
 				14E6DFDA1B4DE602001BBEF8 /* TimerExtension.swift */,
+				14E6DFDC1B4DEA53001BBEF8 /* UpdateExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				14E6DFDB1B4DE602001BBEF8 /* TimerExtension.swift in Sources */,
 				14E6DFD51B4DE14E001BBEF8 /* CornerExtensions.swift in Sources */,
 				14B597271B4CFFBE0039485F /* BombExtension.swift in Sources */,
+				14E6DFDD1B4DEA53001BBEF8 /* UpdateExtension.swift in Sources */,
 				14B597251B4CFF900039485F /* DotExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

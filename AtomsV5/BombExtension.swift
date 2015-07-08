@@ -13,7 +13,7 @@ extension GameScene {
 	
 	func spawnRedBomb(){
 		redBombArray.append(SKSpriteNode(texture: redBombTexture, size: CGSizeMake(CGFloat(52), CGFloat(52))))
-		//self.addChild(redBombArray[redBombCount])
+		self.addChild(redBombArray[redBombCount])
 		redBombArray[redBombCount].physicsBody = SKPhysicsBody(texture: redBombTexture, alphaThreshold: 0.999, size: CGSizeMake(52, 52))
 		redBombArray[redBombCount].userData = NSMutableDictionary()
 		//redBombArray[redBombCount].setValue(2, forKey: "Type")
@@ -36,7 +36,7 @@ extension GameScene {
 	
 	func spawnBlueBomb(){
 		blueBombArray.append(SKSpriteNode(texture: blueBombTexture, size: CGSizeMake(CGFloat(52), CGFloat(52))))
-		//self.addChild(blueBombArray[blueBombCount])
+		self.addChild(blueBombArray[blueBombCount])
 		blueBombArray[blueBombCount].physicsBody = SKPhysicsBody(texture: blueBombTexture, alphaThreshold: 0.999, size: CGSizeMake(52, 52))
 		blueBombArray[blueBombCount].userData = NSMutableDictionary()
 		blueBombArray[blueBombCount].physicsBody?.mass = CGFloat(1.1)
