@@ -12,7 +12,7 @@ import SpriteKit
 extension GameScene {
 	func spawnRedSprite(){
 		redDotArray.append(SKSpriteNode(texture: redDotTexture, color: UIColor(red:CGFloat(1), green:CGFloat(0), blue:CGFloat(0.75), alpha: CGFloat(0.00)), size: CGSizeMake(CGFloat(59), CGFloat(59))))
-		//PlayScene.addChild(redDotArray[redDotCount])	//???????????
+		self.addChild(redDotArray[redDotCount])
 		redDotArray[redDotCount].physicsBody = SKPhysicsBody(texture: redDotTexture, alphaThreshold: 0.999, size: CGSizeMake(59, 59))
 		redDotArray[redDotCount].userData = NSMutableDictionary()
 		redDotArray[redDotCount].physicsBody?.mass = CGFloat(0.8)
@@ -24,7 +24,7 @@ extension GameScene {
 		redDotArray[redDotCount].physicsBody?.affectedByGravity = true
 		redDotArray[redDotCount].physicsBody?.restitution = 0.5
 		redDotArray[redDotCount].physicsBody?.linearDamping = 0.0
-		redDotArray[redDotCount].position = CGPointMake(0,0)//(CGFloat(-50), CGFloat(320 + (21 * (redDotCount % 15))))
+		redDotArray[redDotCount].position = CGPointMake(CGFloat(-50), CGFloat(320 + (21 * (redDotCount % 15))))
 		redDotArray[redDotCount].physicsBody?.applyImpulse(CGVectorMake(CGFloat(32.0), CGFloat(-15.0 + (redDotArray[redDotCount].position.y % 15))))
 		redDotCount++
 		if ((redDotCount % 5) == 0) {
@@ -37,7 +37,7 @@ extension GameScene {
 	func spawnBlueSprite(){
 		blueDotArray.append(SKSpriteNode(texture: blueDotTexture, color: UIColor(red:CGFloat(0), green:CGFloat(0), blue:CGFloat(0.75), alpha: CGFloat(0.00)), size: CGSizeMake(CGFloat(59), CGFloat(59))))
 		//blueDotArray[blueDotCount].colorBlendFactor = 1.0
-		//PlayScene.addChild(blueDotArray[blueDotCount])
+		self.addChild(blueDotArray[blueDotCount])
 		blueDotArray[blueDotCount].physicsBody = SKPhysicsBody(texture: blueDotTexture, alphaThreshold: 0.999, size: CGSizeMake(59, 59))
 		blueDotArray[blueDotCount].userData = NSMutableDictionary()
 		blueDotArray[blueDotCount].physicsBody?.mass = CGFloat(0.8)

@@ -73,7 +73,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 	
 	override func didMoveToView(view: SKView) {
 		setupScene()
-		//[self update(CFTimeInterval)]
+		
 		//timers to spawn the dots
 		redDotTimer = NSTimer.scheduledTimerWithTimeInterval(redTimeInterval, target: self, selector: Selector("spawnRedSprite"), userInfo: nil, repeats: true)
 		blueDotTimer = NSTimer.scheduledTimerWithTimeInterval(blueTimeInterval, target: self, selector: Selector("spawnBlueSprite"), userInfo: nil, repeats: true)
