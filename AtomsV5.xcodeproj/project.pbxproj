@@ -30,6 +30,8 @@
 		14E6DFCE1B4D02CC001BBEF8 /* BigBoy.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E6DFCD1B4D02CC001BBEF8 /* BigBoy.png */; };
 		14E6DFD31B4D72DF001BBEF8 /* BigBoyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E6DFD21B4D72DF001BBEF8 /* BigBoyExtension.swift */; };
 		14E6DFD51B4DE14E001BBEF8 /* CornerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E6DFD41B4DE14E001BBEF8 /* CornerExtensions.swift */; };
+		14E6DFD91B4DE50E001BBEF8 /* ContainerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E6DFD81B4DE50E001BBEF8 /* ContainerExtension.swift */; };
+		14E6DFDB1B4DE602001BBEF8 /* TimerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E6DFDA1B4DE602001BBEF8 /* TimerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		14E6DFCD1B4D02CC001BBEF8 /* BigBoy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BigBoy.png; sourceTree = "<group>"; };
 		14E6DFD21B4D72DF001BBEF8 /* BigBoyExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BigBoyExtension.swift; path = ../BigBoyExtension.swift; sourceTree = "<group>"; };
 		14E6DFD41B4DE14E001BBEF8 /* CornerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerExtensions.swift; sourceTree = "<group>"; };
+		14E6DFD81B4DE50E001BBEF8 /* ContainerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerExtension.swift; sourceTree = "<group>"; };
+		14E6DFDA1B4DE602001BBEF8 /* TimerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +197,8 @@
 				14B597261B4CFFBE0039485F /* BombExtension.swift */,
 				14E6DFD21B4D72DF001BBEF8 /* BigBoyExtension.swift */,
 				14E6DFD41B4DE14E001BBEF8 /* CornerExtensions.swift */,
+				14E6DFD81B4DE50E001BBEF8 /* ContainerExtension.swift */,
+				14E6DFDA1B4DE602001BBEF8 /* TimerExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -339,9 +345,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				14B596E51B4CFD4A0039485F /* GameScene.swift in Sources */,
+				14E6DFD91B4DE50E001BBEF8 /* ContainerExtension.swift in Sources */,
 				14B596E71B4CFD4A0039485F /* GameViewController.swift in Sources */,
 				14B596E11B4CFD4A0039485F /* AppDelegate.swift in Sources */,
 				14E6DFD31B4D72DF001BBEF8 /* BigBoyExtension.swift in Sources */,
+				14E6DFDB1B4DE602001BBEF8 /* TimerExtension.swift in Sources */,
 				14E6DFD51B4DE14E001BBEF8 /* CornerExtensions.swift in Sources */,
 				14B597271B4CFFBE0039485F /* BombExtension.swift in Sources */,
 				14B597251B4CFF900039485F /* DotExtension.swift in Sources */,

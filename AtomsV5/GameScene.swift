@@ -76,36 +76,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 	
 	override func didMoveToView(view: SKView) {
 		setupScene()
-		
-		//timers to spawn the dots
-		redDotTimer = NSTimer.scheduledTimerWithTimeInterval(redTimeInterval, target: self, selector: Selector("spawnRedSprite"), userInfo: nil, repeats: true)
-		blueDotTimer = NSTimer.scheduledTimerWithTimeInterval(blueTimeInterval, target: self, selector: Selector("spawnBlueSprite"), userInfo: nil, repeats: true)
-		bigBoyTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: Selector("spawnBigBoy"), userInfo: nil, repeats: true)
-		
-		//physics field
-		fieldNode = SKFieldNode.noiseFieldWithSmoothness(CGFloat(1.0), animationSpeed: CGFloat(1.0))
-		self.addChild(fieldNode)
-		fieldNode.physicsBody = SKPhysicsBody(circleOfRadius: 700)
-		fieldNode.position = CGPointMake(187, 332)
-		fieldNode.categoryBitMask = fieldMask
-		fieldNode.strength = 0.07
-		
-		//container
-		physicsWorld.gravity = CGVector(dx: 0.0, dy: -0.0)
-		self.physicsWorld.contactDelegate = self
-		self.physicsBody = SKPhysicsBody(edgeLoopFromRect: CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height))
-		self.physicsBody?.restitution = 1.0
-		self.physicsBody?.categoryBitMask = edgeMask
-		
-		self.initializeAllCorners()
-		
+		self.initializeTimers()
+		self.initializeContainer()
+		self.initializeCorners()
 	}
 	
 	func setupScene(){
 		let bgColor = UIColor(red: CGFloat(1), green: CGFloat(0.954), blue: CGFloat(0.910), alpha: CGFloat(1))
 		self.backgroundColor = bgColor
 	}
-	
 	
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
 		self.scene?.paused = false

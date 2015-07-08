@@ -10,8 +10,8 @@ import Foundation
 import SpriteKit
 
 extension GameScene {
-	
-	func initializeAllCorners(){
+
+	func initializeCorners(){
 		initializeCornerParent()
 		initializeRedCorner()
 		initializeBlueCorner()
