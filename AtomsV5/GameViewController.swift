@@ -29,7 +29,35 @@ class GameViewController: UIViewController {
             skView.presentScene(scene)
         }
     }
+	
+	@IBOutlet var scoreCountLabel: UILabel!
 
+	@IBAction func dragDot(sender: UIPanGestureRecognizer) {
+		if sender.state == UIGestureRecognizerState.Began && dotToDrag != nil{
+			dotToDrag.size = CGSizeMake(dotToDrag.size.width * 1.2, dotToDrag.size.height * 1.2)
+			dotToDrag.physicsBody?.categoryBitMask = noContactMask
+			dotToDrag.physicsBody?.collisionBitMask = noContactMask
+			dotToDrag.physicsBody?.contactTestBitMask = cornerMask
+			dotToDrag.physicsBody?.fieldBitMask = noContactMask
+			dotToDrag?.physicsBody?.affectedByGravity = false
+			dotToDrag?.physicsBody?.velocity =  /*CGVectorMake(sender.velocityInView(self.view).x, sender.velocityInView(self.view).y)*/
+				CGVectorMake(CGFloat(0.0), CGFloat(0.0))
+		}
+		self.view.bringSubviewToFront(sender.view!)
+		
+		dotToDrag?.position = CGPoint(x: (sender.locationInView(sender.view).x), y: self.view.bounds.size.height - (sender.locationInView(sender.view).y))
+		if sender.state == UIGestureRecognizerState.Ended{
+			scoreCount = scoreCount + addToScoreCount
+			scoreCountLabel.text = String(scoreCount)
+			if dotToDrag != nil{
+				dotToDrag?.size = CGSizeMake(dotToDrag.size.width / 1.2, dotToDrag.size.height / 1.2)
+			}
+			dotToDrag?.physicsBody?.affectedByGravity = true
+			dotToDrag?.physicsBody?.fieldBitMask = fieldMask
+			dotToDrag = nil
+		}
+
+	}
     override func shouldAutorotate() -> Bool {
         return true
     }

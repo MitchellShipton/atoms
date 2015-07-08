@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1476D7A91B4D024900345707 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 1476D7A81B4D024900345707 /* GameScene.sks */; };
 		14B596E11B4CFD4A0039485F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B596E01B4CFD4A0039485F /* AppDelegate.swift */; };
-		14B596E31B4CFD4A0039485F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 14B596E21B4CFD4A0039485F /* GameScene.sks */; };
 		14B596E51B4CFD4A0039485F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B596E41B4CFD4A0039485F /* GameScene.swift */; };
 		14B596E71B4CFD4A0039485F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B596E61B4CFD4A0039485F /* GameViewController.swift */; };
 		14B596EA1B4CFD4A0039485F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14B596E81B4CFD4A0039485F /* Main.storyboard */; };
@@ -16,6 +16,18 @@
 		14B596EF1B4CFD4A0039485F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14B596ED1B4CFD4A0039485F /* LaunchScreen.storyboard */; };
 		14B596FA1B4CFD4A0039485F /* AtomsV5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B596F91B4CFD4A0039485F /* AtomsV5Tests.swift */; };
 		14B597051B4CFD4A0039485F /* AtomsV5UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B597041B4CFD4A0039485F /* AtomsV5UITests.swift */; };
+		14B5971B1B4CFF750039485F /* BlueBomb.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B597121B4CFF750039485F /* BlueBomb.png */; };
+		14B5971C1B4CFF750039485F /* BlueBomb1.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B597131B4CFF750039485F /* BlueBomb1.png */; };
+		14B5971D1B4CFF750039485F /* BlueCorner2.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B597141B4CFF750039485F /* BlueCorner2.png */; };
+		14B5971E1B4CFF750039485F /* BlueDot1.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B597151B4CFF750039485F /* BlueDot1.png */; };
+		14B5971F1B4CFF750039485F /* RedBomb.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B597161B4CFF750039485F /* RedBomb.png */; };
+		14B597201B4CFF750039485F /* RedBomb1.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B597171B4CFF750039485F /* RedBomb1.png */; };
+		14B597211B4CFF750039485F /* RedCorner2.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B597181B4CFF750039485F /* RedCorner2.png */; };
+		14B597221B4CFF750039485F /* RedDot1.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B597191B4CFF750039485F /* RedDot1.png */; };
+		14B597231B4CFF750039485F /* Screen Shot 2014-12-29 at 3.10.10 AM.png in Resources */ = {isa = PBXBuildFile; fileRef = 14B5971A1B4CFF750039485F /* Screen Shot 2014-12-29 at 3.10.10 AM.png */; };
+		14B597251B4CFF900039485F /* DotExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B597241B4CFF900039485F /* DotExt.swift */; };
+		14B597271B4CFFBE0039485F /* BomExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B597261B4CFFBE0039485F /* BomExt.swift */; };
+		14E6DFCE1B4D02CC001BBEF8 /* BigBoy.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E6DFCD1B4D02CC001BBEF8 /* BigBoy.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,9 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1476D7A81B4D024900345707 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		14B596DD1B4CFD4A0039485F /* AtomsV5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AtomsV5.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14B596E01B4CFD4A0039485F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		14B596E21B4CFD4A0039485F /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		14B596E41B4CFD4A0039485F /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		14B596E61B4CFD4A0039485F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		14B596E91B4CFD4A0039485F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +63,18 @@
 		14B597001B4CFD4A0039485F /* AtomsV5UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AtomsV5UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14B597041B4CFD4A0039485F /* AtomsV5UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtomsV5UITests.swift; sourceTree = "<group>"; };
 		14B597061B4CFD4A0039485F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14B597121B4CFF750039485F /* BlueBomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueBomb.png; sourceTree = "<group>"; };
+		14B597131B4CFF750039485F /* BlueBomb1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueBomb1.png; sourceTree = "<group>"; };
+		14B597141B4CFF750039485F /* BlueCorner2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueCorner2.png; sourceTree = "<group>"; };
+		14B597151B4CFF750039485F /* BlueDot1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueDot1.png; sourceTree = "<group>"; };
+		14B597161B4CFF750039485F /* RedBomb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedBomb.png; sourceTree = "<group>"; };
+		14B597171B4CFF750039485F /* RedBomb1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedBomb1.png; sourceTree = "<group>"; };
+		14B597181B4CFF750039485F /* RedCorner2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedCorner2.png; sourceTree = "<group>"; };
+		14B597191B4CFF750039485F /* RedDot1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedDot1.png; sourceTree = "<group>"; };
+		14B5971A1B4CFF750039485F /* Screen Shot 2014-12-29 at 3.10.10 AM.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Screen Shot 2014-12-29 at 3.10.10 AM.png"; sourceTree = "<group>"; };
+		14B597241B4CFF900039485F /* DotExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DotExt.swift; sourceTree = "<group>"; };
+		14B597261B4CFFBE0039485F /* BomExt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BomExt.swift; sourceTree = "<group>"; };
+		14E6DFCD1B4D02CC001BBEF8 /* BigBoy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BigBoy.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +109,16 @@
 				14B596F81B4CFD4A0039485F /* AtomsV5Tests */,
 				14B597031B4CFD4A0039485F /* AtomsV5UITests */,
 				14B596DE1B4CFD4A0039485F /* Products */,
+				14B597121B4CFF750039485F /* BlueBomb.png */,
+				14B597131B4CFF750039485F /* BlueBomb1.png */,
+				14B597141B4CFF750039485F /* BlueCorner2.png */,
+				14B597151B4CFF750039485F /* BlueDot1.png */,
+				14B597161B4CFF750039485F /* RedBomb.png */,
+				14B597171B4CFF750039485F /* RedBomb1.png */,
+				14B597181B4CFF750039485F /* RedCorner2.png */,
+				14B597191B4CFF750039485F /* RedDot1.png */,
+				14B5971A1B4CFF750039485F /* Screen Shot 2014-12-29 at 3.10.10 AM.png */,
+				14E6DFCD1B4D02CC001BBEF8 /* BigBoy.png */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,8 +136,10 @@
 			isa = PBXGroup;
 			children = (
 				14B596E01B4CFD4A0039485F /* AppDelegate.swift */,
-				14B596E21B4CFD4A0039485F /* GameScene.sks */,
+				1476D7A81B4D024900345707 /* GameScene.sks */,
 				14B596E41B4CFD4A0039485F /* GameScene.swift */,
+				14B597241B4CFF900039485F /* DotExt.swift */,
+				14B597261B4CFFBE0039485F /* BomExt.swift */,
 				14B596E61B4CFD4A0039485F /* GameViewController.swift */,
 				14B596E81B4CFD4A0039485F /* Main.storyboard */,
 				14B596EB1B4CFD4A0039485F /* Assets.xcassets */,
@@ -234,10 +270,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14B596E31B4CFD4A0039485F /* GameScene.sks in Resources */,
+				14B597211B4CFF750039485F /* RedCorner2.png in Resources */,
+				14E6DFCE1B4D02CC001BBEF8 /* BigBoy.png in Resources */,
+				14B5971C1B4CFF750039485F /* BlueBomb1.png in Resources */,
 				14B596EF1B4CFD4A0039485F /* LaunchScreen.storyboard in Resources */,
 				14B596EC1B4CFD4A0039485F /* Assets.xcassets in Resources */,
+				14B597221B4CFF750039485F /* RedDot1.png in Resources */,
+				14B5971B1B4CFF750039485F /* BlueBomb.png in Resources */,
+				14B597231B4CFF750039485F /* Screen Shot 2014-12-29 at 3.10.10 AM.png in Resources */,
+				14B5971D1B4CFF750039485F /* BlueCorner2.png in Resources */,
 				14B596EA1B4CFD4A0039485F /* Main.storyboard in Resources */,
+				14B597201B4CFF750039485F /* RedBomb1.png in Resources */,
+				14B5971E1B4CFF750039485F /* BlueDot1.png in Resources */,
+				1476D7A91B4D024900345707 /* GameScene.sks in Resources */,
+				14B5971F1B4CFF750039485F /* RedBomb.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +311,8 @@
 				14B596E51B4CFD4A0039485F /* GameScene.swift in Sources */,
 				14B596E71B4CFD4A0039485F /* GameViewController.swift in Sources */,
 				14B596E11B4CFD4A0039485F /* AppDelegate.swift in Sources */,
+				14B597271B4CFFBE0039485F /* BomExt.swift in Sources */,
+				14B597251B4CFF900039485F /* DotExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +537,7 @@
 				14B5970B1B4CFD4A0039485F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14B5970C1B4CFD4A0039485F /* Build configuration list for PBXNativeTarget "AtomsV5Tests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +546,7 @@
 				14B5970E1B4CFD4A0039485F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		14B5970F1B4CFD4A0039485F /* Build configuration list for PBXNativeTarget "AtomsV5UITests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +555,7 @@
 				14B597111B4CFD4A0039485F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
