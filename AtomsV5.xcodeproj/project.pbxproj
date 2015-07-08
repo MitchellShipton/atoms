@@ -29,6 +29,7 @@
 		14B597271B4CFFBE0039485F /* BombExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B597261B4CFFBE0039485F /* BombExtension.swift */; };
 		14E6DFCE1B4D02CC001BBEF8 /* BigBoy.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E6DFCD1B4D02CC001BBEF8 /* BigBoy.png */; };
 		14E6DFD31B4D72DF001BBEF8 /* BigBoyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E6DFD21B4D72DF001BBEF8 /* BigBoyExtension.swift */; };
+		14E6DFD51B4DE14E001BBEF8 /* CornerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14E6DFD41B4DE14E001BBEF8 /* CornerExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		14B597261B4CFFBE0039485F /* BombExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BombExtension.swift; sourceTree = "<group>"; };
 		14E6DFCD1B4D02CC001BBEF8 /* BigBoy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BigBoy.png; sourceTree = "<group>"; };
 		14E6DFD21B4D72DF001BBEF8 /* BigBoyExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BigBoyExtension.swift; path = ../BigBoyExtension.swift; sourceTree = "<group>"; };
+		14E6DFD41B4DE14E001BBEF8 /* CornerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +192,7 @@
 				14B597241B4CFF900039485F /* DotExtension.swift */,
 				14B597261B4CFFBE0039485F /* BombExtension.swift */,
 				14E6DFD21B4D72DF001BBEF8 /* BigBoyExtension.swift */,
+				14E6DFD41B4DE14E001BBEF8 /* CornerExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				14B596E71B4CFD4A0039485F /* GameViewController.swift in Sources */,
 				14B596E11B4CFD4A0039485F /* AppDelegate.swift in Sources */,
 				14E6DFD31B4D72DF001BBEF8 /* BigBoyExtension.swift in Sources */,
+				14E6DFD51B4DE14E001BBEF8 /* CornerExtensions.swift in Sources */,
 				14B597271B4CFFBE0039485F /* BombExtension.swift in Sources */,
 				14B597251B4CFF900039485F /* DotExtension.swift in Sources */,
 			);

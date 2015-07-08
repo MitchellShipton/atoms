@@ -68,6 +68,9 @@ var addToScoreCount = 0
 var redTimeInterval: NSTimeInterval = 3
 var blueTimeInterval: NSTimeInterval = 3
 
+let blueCornerFinalPoint = CGPointMake(15, 15)
+let redCornerFinalPoint = CGPointMake(370, 650)
+var toPulseRedCorner: Int! = 0
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
 	
@@ -94,58 +97,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		self.physicsBody?.restitution = 1.0
 		self.physicsBody?.categoryBitMask = edgeMask
 		
-		//corner parent
-		cornerParent = self.childNodeWithName("corner_Parent")
-		
-		//red corner
-		redCorner = cornerParent.childNodeWithName("red_Corner") as! SKSpriteNode
-		redCorner.physicsBody = SKPhysicsBody(texture: redCorner.texture!, alphaThreshold: 0.99, size: redCorner.size)
-		redCorner.color = UIColor(red: 0.7, green: 0.15, blue: 0.60, alpha: 0.0)
-		redCorner.colorBlendFactor = 0.2
-		redCorner.physicsBody?.affectedByGravity = false
-		redCorner.physicsBody?.categoryBitMask = cornerMask
-		//redCorner.physicsBody?.collisionBitMask = dotMask
-		redCorner.physicsBody?.contactTestBitMask = noContactMask
-		redCorner.physicsBody?.fieldBitMask = noContactMask
-		redCorner.physicsBody?.dynamic = false
-		//redCorner.physicsBody?.mass = 1000000000000
-		
-		//blue corner
-		blueCorner = cornerParent.childNodeWithName("blue_Corner") as! SKSpriteNode
-		blueCorner.physicsBody = SKPhysicsBody(texture: blueCorner.texture!, alphaThreshold: 0.99, size: blueCorner.size)
-		blueCorner.color = UIColor(red: 0, green: 0, blue: 1, alpha: 0.0)
-		blueCorner.colorBlendFactor = 0.45
-		blueCorner.physicsBody?.affectedByGravity = false
-		blueCorner.physicsBody?.categoryBitMask = cornerMask
-		//blueCorner.physicsBody?.collisionBitMask = dotMask
-		blueCorner.physicsBody?.contactTestBitMask = noContactMask
-		blueCorner.physicsBody?.fieldBitMask = noContactMask
-		blueCorner.physicsBody?.dynamic = false
-		//blueCorner.physicsBody?.mass = 1000000000000
-		
-		//detect blue corner
-		detectBlueCorner = cornerParent.childNodeWithName("detectBlue_Corner") as! SKSpriteNode
-		detectBlueCorner.physicsBody = SKPhysicsBody(texture: blueCorner.texture!, alphaThreshold: 0.99, size: detectBlueCorner.size)
-		detectBlueCorner.color = UIColor(red: 1, green: 0.954, blue: 0.910, alpha: 0)
-		detectBlueCorner.colorBlendFactor = 1
-		detectBlueCorner.physicsBody?.affectedByGravity = false
-		detectBlueCorner.physicsBody?.dynamic = false
-		detectBlueCorner.physicsBody?.categoryBitMask = cornerMask
-		detectBlueCorner.physicsBody?.collisionBitMask = noContactMask
-		detectBlueCorner.physicsBody?.contactTestBitMask = noContactMask
-		detectBlueCorner.physicsBody?.fieldBitMask = noContactMask
-		
-		//detect red corner
-		detectRedCorner = cornerParent.childNodeWithName("detectRed_Corner") as! SKSpriteNode
-		detectRedCorner.physicsBody = SKPhysicsBody(texture: redCorner.texture!, alphaThreshold: 0.99, size: detectRedCorner.size)
-		detectRedCorner.color = UIColor(red: 1, green: 0.954, blue: 0.910, alpha: 0)
-		detectRedCorner.colorBlendFactor = 1
-		detectRedCorner.physicsBody?.affectedByGravity = false
-		detectRedCorner.physicsBody?.dynamic = false
-		detectRedCorner.physicsBody?.categoryBitMask = cornerMask
-		detectRedCorner.physicsBody?.collisionBitMask = noContactMask
-		detectRedCorner.physicsBody?.contactTestBitMask = noContactMask
-		detectRedCorner.physicsBody?.fieldBitMask = noContactMask
+		self.initializeAllCorners()
 		
 	}
 	
@@ -160,43 +112,27 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		
 		if let touch = touches.first {
 			let location = touch.locationInNode(self)
-			for SKSpriteNode in redDotArray {
-				if (location.x < (SKSpriteNode.position.x + SKSpriteNode.size.width/(3.8))) && (location.x > SKSpriteNode.position.x - SKSpriteNode.size.width/3.8) {
-					if (location.y < (SKSpriteNode.position.y + SKSpriteNode.size.height/3.8)) && (location.y > (SKSpriteNode.position.y - SKSpriteNode.size.height/3.8)){
-						dotToDrag = SKSpriteNode
-					}   }
-			}
-			for SKSpriteNode in blueDotArray {
-				if (location.x < (SKSpriteNode.position.x + SKSpriteNode.size.width/3.8)) && (location.x > SKSpriteNode.position.x - SKSpriteNode.size.width/3.8) {
-					if (location.y < (SKSpriteNode.position.y + SKSpriteNode.size.height/3.8)) && (location.y > (SKSpriteNode.position.y - SKSpriteNode.size.height/3.8)){
-						dotToDrag = SKSpriteNode
-					}        }   }
-			for SKSpriteNode in blueBombArray {
-				if (location.x < (SKSpriteNode.position.x + SKSpriteNode.size.width/3.8)) && (location.x > SKSpriteNode.position.x - SKSpriteNode.size.width/3.8) {
-					if (location.y < (SKSpriteNode.position.y + SKSpriteNode.size.height/3.8)) && (location.y > (SKSpriteNode.position.y - SKSpriteNode.size.height/3.8)){
-						dotToDrag = SKSpriteNode
-					}        }   }
-			for SKSpriteNode in redBombArray {
-				if (location.x < (SKSpriteNode.position.x + SKSpriteNode.size.width/3.8)) && (location.x > SKSpriteNode.position.x - SKSpriteNode.size.width/3.8) {
-					if (location.y < (SKSpriteNode.position.y + SKSpriteNode.size.height/3.8)) && (location.y > (SKSpriteNode.position.y - SKSpriteNode.size.height/3.8)){
-						dotToDrag = SKSpriteNode
-					}        }   }
-			for SKSpriteNode in bigBoyArray {
-				if (location.x < (SKSpriteNode.position.x + SKSpriteNode.size.width/3.8)) && (location.x > SKSpriteNode.position.x - SKSpriteNode.size.width/3.8) {
-					if (location.y < (SKSpriteNode.position.y + SKSpriteNode.size.height/3.8)) && (location.y > (SKSpriteNode.position.y - SKSpriteNode.size.height/3.8)){
-						dotToDrag = SKSpriteNode
-					}        }   }
+			checkIfTouchingDot(location)
 		}
 		super.touchesBegan(touches , withEvent:event)
 	}
 	
-	let blueCornerFinalPoint = CGPointMake(15, 15)
-	let redCornerFinalPoint = CGPointMake(370, 650)
-	var toPulseRedCorner: Int! = 0
+	func checkIfTouchingDot(location: CGPoint){
+		checkIfTouchingDot(location, dotArray: redDotArray)
+		checkIfTouchingDot(location, dotArray: blueDotArray)
+		checkIfTouchingDot(location, dotArray: blueBombArray)
+		checkIfTouchingDot(location, dotArray: redBombArray)
+		checkIfTouchingDot(location, dotArray: bigBoyArray)
+	}
 	
-	
-	
-	
+	func checkIfTouchingDot(location: CGPoint, dotArray: [SKSpriteNode]){
+		for SKSpriteNode in dotArray {
+			if (location.x < (SKSpriteNode.position.x + SKSpriteNode.size.width/(3.8))) && (location.x > SKSpriteNode.position.x - SKSpriteNode.size.width/3.8) {
+				if (location.y < (SKSpriteNode.position.y + SKSpriteNode.size.height/3.8)) && (location.y > (SKSpriteNode.position.y - SKSpriteNode.size.height/3.8)){
+					dotToDrag = SKSpriteNode
+				}   }
+		}
+	}
 	
 	
 	override func update(currentTime: CFTimeInterval) {
@@ -233,22 +169,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 				SKSpriteNode.physicsBody?.contactTestBitMask = cornerMask
 				if (SKSpriteNode.position.y < cornerParent.position.y){
 					print(SKSpriteNode)
-					self.scene?.paused = true /*
-					
-					if (SKSpriteNode.position.y > blueCornerFinalPoint.y) {
-					SKSpriteNode.position.y = SKSpriteNode.position.y - 2
-					}
-					if (SKSpriteNode.position.x > blueCornerFinalPoint.x) {
-					SKSpriteNode.position.x = SKSpriteNode.position.x - 2
-					}
-					if (SKSpriteNode.colorBlendFactor > 0) {
-					SKSpriteNode.colorBlendFactor = SKSpriteNode.colorBlendFactor - 0.05
-					} else {SKSpriteNode.removeFromParent()}
-					*/} else {
+					self.scene?.paused = true
+				} else {
 					addToScoreCount = 1
-					//                    if (toPulseRedCorner == 0){
-					//                        toPulseRedCorner = 1
-					//                    }
+                    //if (toPulseRedCorner == 0){
+                    //    toPulseRedCorner = 1
+                    //}
 					if (SKSpriteNode.position.y < redCornerFinalPoint.y) {
 						SKSpriteNode.position.y = SKSpriteNode.position.y + 2
 					}
@@ -256,11 +182,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 						SKSpriteNode.position.x = SKSpriteNode.position.x + 2
 					}
 					if (SKSpriteNode.colorBlendFactor > 0) {
-						//SKSpriteNode.colorBlendFactor = SKSpriteNode.colorBlendFactor - 0.05
 						SKSpriteNode.alpha = SKSpriteNode.alpha - 0.1       //double check this
 					} else {SKSpriteNode.removeFromParent()}
 				}   } else if (SKSpriteNode.colorBlendFactor >= 1) {print(SKSpriteNode);self.scene?.paused = true}
 		}
+		
 		for SKSpriteNode in blueDotArray {
 			if SKSpriteNode.userData?.valueForKey("blueBombed") == nil {
 				SKSpriteNode.colorBlendFactor = SKSpriteNode.colorBlendFactor + 0.0015
@@ -273,7 +199,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 				SKSpriteNode.removeFromParent()
 			}
 			if ((SKSpriteNode.userData?.valueForKey("Remove?")) != nil){
-				//SKSpriteNode.userData?.setValue(nil, forKey: "Remove?")
 				SKSpriteNode.physicsBody?.categoryBitMask = noContactMask
 				SKSpriteNode.physicsBody?.collisionBitMask = noContactMask
 				SKSpriteNode.physicsBody?.contactTestBitMask = cornerMask
@@ -286,24 +211,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 						SKSpriteNode.position.x = SKSpriteNode.position.x - 2
 					}
 					if (SKSpriteNode.colorBlendFactor > 0) {
-						//SKSpriteNode.colorBlendFactor = SKSpriteNode.colorBlendFactor - 0.03
-						SKSpriteNode.alpha = SKSpriteNode.alpha - 0.1       //and this
+						SKSpriteNode.alpha = SKSpriteNode.alpha - 0.1  //.
 					} else {SKSpriteNode.removeFromParent()}
 				} else {
 					print(SKSpriteNode)
-					self.scene?.paused = true /*
-					
-					if (SKSpriteNode.position.y < redCornerFinalPoint.y) {
-					SKSpriteNode.position.y = SKSpriteNode.position.y + 2
-					}
-					if (SKSpriteNode.position.x < redCornerFinalPoint.x) {
-					SKSpriteNode.position.x = SKSpriteNode.position.x + 2
-					}
-					if (SKSpriteNode.colorBlendFactor > 0) {
-					SKSpriteNode.colorBlendFactor = SKSpriteNode.colorBlendFactor - 0.05
-					} else {SKSpriteNode.removeFromParent()}
-					*/}    } else if (SKSpriteNode.colorBlendFactor >= 1) {print(SKSpriteNode);self.scene?.paused = true}
+					self.scene?.paused = true
+				}
+			} else if (SKSpriteNode.colorBlendFactor >= 1) {print(SKSpriteNode);self.scene?.paused = true}
 		}
+		
 		/*if (pulseRedCorner == 2){
 		redCorner.colorBlendFactor = redCorner.colorBlendFactor + 0.1
 		if (redCorner.colorBlendFactor >= 0.5){
@@ -416,9 +332,5 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		//    pulseRedCorner = 2
 		//}
 	}
-	
-	//	func spawnRedSpriteInScene() {
-	//		spawnRedSprite()
-	//	}
 	
 }
