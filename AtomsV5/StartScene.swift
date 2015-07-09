@@ -11,6 +11,9 @@ import SpriteKit
 
 class StartScene: SKScene {
 	
+	let startButton = SKSpriteNode(imageNamed: "Start")
+	let scoreButton = SKSpriteNode(imageNamed: "Scores")
+
 	override func didMoveToView(view: SKView) {
 		
 		setupScene()
@@ -23,8 +26,8 @@ class StartScene: SKScene {
 		let actionDelta2 = SKAction.moveByX(4*endX, y: 0, duration: 0.6)
 		let actionDelta3 = SKAction.moveByX(6*endX, y: 0, duration: 0.9)
 		let actionDelta4 = SKAction.moveByX(8*endX, y: 0, duration: 1.2)
-		let nodeFade = SKAction.fadeAlphaTo(1, duration: 2)
-
+		let nodeFade = SKAction.fadeAlphaTo(0.7, duration: 2)
+		
 		let titleDot5 = SKSpriteNode(imageNamed: "TitleDot5")
 		titleDot5.name = "titleDot5"
 		titleDot5.position = startPoint
@@ -74,7 +77,6 @@ class StartScene: SKScene {
 		titleDot1.runAction(nodeFade)
 		self.addChild(titleDot1)
 		
-		let startButton = SKSpriteNode(imageNamed: "Start")
 		startButton.name = "startButton"
 		startButton.position = CGPointMake(self.frame.width/2, 4.0*self.frame.height/7)
 		startButton.xScale = 0.06
@@ -85,7 +87,6 @@ class StartScene: SKScene {
 		startButton.runAction(SKAction.sequence([actionWait, startAction, nodeFade]))
 		self.addChild(startButton)
 		
-		let scoreButton = SKSpriteNode(imageNamed: "Scores")
 		scoreButton.name = "scoreButton"
 		scoreButton.position = CGPointMake(self.frame.width/2, 3.1*self.frame.height/7)
 		scoreButton.xScale = 0.06
@@ -106,11 +107,20 @@ class StartScene: SKScene {
 			let location = touch.locationInNode(self)
 			if let theNode = self.nodeAtPoint(location).name{
 				if theNode == "startButton" {
+					startButton.alpha = 1.0
 					self.gameVCDelagate.presentGameViewController()
+				}else if theNode == "scoreButton" {
+					scoreButton.alpha = 1.0
+					//self.gameVCDelagate.presentGameViewController()
 				}
 			}
 		}
 		super.touchesBegan(touches , withEvent:event)
+	}
+	
+	override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+		startButton.alpha = 0.7
+		scoreButton.alpha = 0.7
 	}
 
 	func setupScene(){

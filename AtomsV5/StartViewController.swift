@@ -31,7 +31,7 @@ class StartViewController: UIViewController {
 	}
 	
 	func presentGameViewController(){
-		performSegueWithIdentifier("startToGameSegue", sender: self)
+		self.performSegueWithIdentifier("startToGameSegue", sender: self)
 	}
 	
 	override func shouldAutorotate() -> Bool {
