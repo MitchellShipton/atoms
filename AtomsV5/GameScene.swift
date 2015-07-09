@@ -81,7 +81,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 	}
 	
 	func setupScene(){
-		let bgColor = UIColor(red: CGFloat(1), green: CGFloat(0.954), blue: CGFloat(0.910), alpha: CGFloat(1))
+		let bgColor = UIColor(red: CGFloat(0.9372), green: CGFloat(0.954), blue: CGFloat(0.910), alpha: CGFloat(1))
 		self.backgroundColor = bgColor
 	}
 	
@@ -103,15 +103,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 		checkIfTouchingDot(location, dotArray: bigBoyArray)
 	}
 	
-	func checkIfTouchingDot(location: CGPoint, dotArray: [SKSpriteNode]){
+	func checkIfTouchingDot(location: CGPoint, dotArray: [SKSpriteNode])->Bool{
 		for SKSpriteNode in dotArray {
 			if (location.x < (SKSpriteNode.position.x + SKSpriteNode.size.width/(3.8))) && (location.x > SKSpriteNode.position.x - SKSpriteNode.size.width/3.8) {
 				if (location.y < (SKSpriteNode.position.y + SKSpriteNode.size.height/3.8)) && (location.y > (SKSpriteNode.position.y - SKSpriteNode.size.height/3.8)){
 					dotToDrag = SKSpriteNode
-				}   }
+					return true
+				}
+			}
 		}
+		return false
 	}
-	
 	
 	override func update(currentTime: CFTimeInterval) {
 		/* Called before each frame is rendered */
@@ -122,7 +124,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 			blueTimeInterval = blueTimeInterval - 0.0006
 		}
 		
-		let chanceFire = arc4random_uniform(1000)
+		let chanceFire = arc4random_uniform(520)
 		if (chanceFire) == 500 {
 				spawnBlueBomb()
 		}

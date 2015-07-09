@@ -39,19 +39,19 @@ extension GameScene {
 					print(SKSpriteNode)
 					self.scene?.paused = true
 				}else {
-				addToScoreCount = 1
+					addToScoreCount = 1
 				//if (toPulseRedCorner == 0){
 				//    toPulseRedCorner = 1
 				//}
-				if (SKSpriteNode.position.y < redCornerFinalPoint.y) {
-					SKSpriteNode.position.y = SKSpriteNode.position.y + 2
-				}
-				if (SKSpriteNode.position.x < redCornerFinalPoint.x) {
-					SKSpriteNode.position.x = SKSpriteNode.position.x + 2
-				}
-				if (SKSpriteNode.colorBlendFactor > 0) {
-					SKSpriteNode.alpha = SKSpriteNode.alpha - 0.1       //double check this
-				} else {SKSpriteNode.removeFromParent()}
+					if (SKSpriteNode.position.y < redCornerFinalPoint.y) {
+						SKSpriteNode.position.y = SKSpriteNode.position.y + 2
+					}
+					if (SKSpriteNode.position.x < redCornerFinalPoint.x) {
+						SKSpriteNode.position.x = SKSpriteNode.position.x + 2
+					}
+					if (SKSpriteNode.colorBlendFactor > 0) {
+						SKSpriteNode.alpha = SKSpriteNode.alpha - 0.1       //double check this
+					} else {SKSpriteNode.removeFromParent()}
 				}
 			}else if (SKSpriteNode.colorBlendFactor >= 1) {print(SKSpriteNode);self.scene?.paused = true}
 		}
@@ -86,7 +86,7 @@ extension GameScene {
 					} else {SKSpriteNode.removeFromParent()}
 				} else {
 					print(SKSpriteNode)
-					self.scene?.paused = true
+					//self.scene?.paused = true
 				}
 			}else if (SKSpriteNode.colorBlendFactor >= 1) {print(SKSpriteNode);self.scene?.paused = true}
 		}
@@ -123,11 +123,36 @@ extension GameScene {
 						SKSpriteNode.alpha = SKSpriteNode.alpha - 0.15
 					}
 					SKSpriteNode.userData?.setValue(1, forKey: "redBombed")
-				}
-				if (SKSpriteNode.position.y > blueCornerFinalPoint.y) {
+					
+					
+					SKSpriteNode.physicsBody?.categoryBitMask = noContactMask
+					SKSpriteNode.physicsBody?.collisionBitMask = noContactMask
+					SKSpriteNode.physicsBody?.contactTestBitMask = cornerMask
+//					if (SKSpriteNode.position.y < cornerParent.position.y){
+//						print(SKSpriteNode)
+//						self.scene?.paused = true
+//					}else {
+					
+						addToScoreCount = 1
+						//if (toPulseRedCorner == 0){
+						//    toPulseRedCorner = 1
+						//}
+						if (SKSpriteNode.position.y < redCornerFinalPoint.y) {
+							SKSpriteNode.position.y = SKSpriteNode.position.y + 2
+						}
+						if (SKSpriteNode.position.x < redCornerFinalPoint.x) {
+							SKSpriteNode.position.x = SKSpriteNode.position.x + 2
+						}
+						if (SKSpriteNode.colorBlendFactor > 0) {
+							SKSpriteNode.alpha = SKSpriteNode.alpha - 0.0001       //double check this
+						} else {SKSpriteNode.removeFromParent()}
+					}
+					
+				//}
+				if (SKSpriteNode.position.y > redCornerFinalPoint.y) {
 					SKSpriteNode.position.y = SKSpriteNode.position.y + 2
 				}
-				if (SKSpriteNode.position.x > blueCornerFinalPoint.x) {
+				if (SKSpriteNode.position.x > redCornerFinalPoint.x) {
 					SKSpriteNode.position.x = SKSpriteNode.position.x + 2
 				}
 				if (SKSpriteNode.alpha > 0) {
@@ -157,6 +182,9 @@ extension GameScene {
 						self.scene?.paused = true}
 					else {
 						addToScoreCount = 5
+						for SKSpriteNode in blueDotArray{
+							SKSpriteNode.userData?.setValue(1, forKey: "Remove?")
+						}
 						for SKSpriteNode in blueDotArray{
 							if (SKSpriteNode.alpha > 0) {
 								SKSpriteNode.alpha = SKSpriteNode.alpha - 0.15
