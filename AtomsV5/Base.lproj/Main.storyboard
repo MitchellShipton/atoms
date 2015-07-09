@@ -23,6 +23,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="BV1-FR-VrT" kind="presentation" identifier="startToGameSegue" id="ZoS-wL-mTZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyb-mY-cQe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
