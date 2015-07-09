@@ -28,7 +28,7 @@ extension GameScene {
 		redDotArray[redDotCount].physicsBody?.applyImpulse(CGVectorMake(CGFloat(32.0), CGFloat(-15.0 + (redDotArray[redDotCount].position.y % 15))))
 		redDotCount++
 		if ((redDotCount % 5) == 0) {
-			print("increasing reds")
+//			print("increasing reds")
 			redDotTimer.invalidate()
 			redDotTimer = NSTimer.scheduledTimerWithTimeInterval(redTimeInterval, target: self, selector: Selector("spawnRedSprite"), userInfo: nil, repeats: true)
 		}

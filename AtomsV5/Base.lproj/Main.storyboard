@@ -10,26 +10,17 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="Y01-sj-FbZ">
             <objects>
-                <viewController id="uIw-gc-B1f" sceneMemberID="viewController">
+                <viewController id="uIw-gc-B1f" customClass="StartViewController" customModule="AtomsV5" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mWz-Q0-932"/>
                         <viewControllerLayoutGuide type="bottom" id="oLS-Kq-Bcl"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="HSM-EN-ev3">
+                    <view key="view" contentMode="scaleToFill" id="HSM-EN-ev3" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sbn-3L-pVx">
-                                <rect key="frame" x="223" y="285" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="BV1-FR-VrT" kind="presentation" id="a4F-dN-4ht"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>

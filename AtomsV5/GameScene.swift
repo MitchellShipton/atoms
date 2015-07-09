@@ -81,7 +81,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 	}
 	
 	func setupScene(){
-		let bgColor = UIColor(red: CGFloat(0.9372), green: CGFloat(0.954), blue: CGFloat(0.910), alpha: CGFloat(1))
+		let bgColor = UIColor(red: CGFloat(0.9373), green: CGFloat(0.9334), blue: CGFloat(0.9608), alpha: CGFloat(1))
 		self.backgroundColor = bgColor
 	}
 	
