@@ -9,11 +9,27 @@
 import UIKit
 import SpriteKit
 
+extension SKNode {
+	class func unarchiveFromFile(file : NSString) -> SKNode? {
+		if let path = NSBundle.mainBundle().pathForResource(file as String, ofType: "sks") {
+			let sceneData = try! NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe)
+			let archiver = NSKeyedUnarchiver(forReadingWithData: sceneData)
+			
+			archiver.setClass(self.classForKeyedUnarchiver(), forClassName: "SKScene")
+			let scene = archiver.decodeObjectForKey(NSKeyedArchiveRootObjectKey) as! SKNode
+			archiver.finishDecoding()
+			return scene
+		} else {
+			return nil
+		}
+	}
+}
+
 class StartViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+
 		if let scene = StartScene(fileNamed:"StartScene") {
 			// Configure the view.
 			let skView = self.view as! SKView
@@ -30,8 +46,26 @@ class StartViewController: UIViewController {
 		}
 	}
 	
+	@IBAction func startButton(sender: UIButton) {
+		
+	}
+	
 	func presentGameViewController(){
-		self.performSegueWithIdentifier("startToGameSegue", sender: self)
+		//self.performSegueWithIdentifier("startToGameSegue", sender: self)
+//		if let scene2 = GameScene(fileNamed:"GameScene") {
+//			// Configure the view.
+//			let skView2 = self.view as! SKView
+//			skView2.showsFPS = false
+//			skView2.showsNodeCount = false
+//			
+//			/* Sprite Kit applies additional optimizations to improve rendering performance */
+//			skView2.ignoresSiblingOrder = true
+//			
+//			/* Set the scale mode to scale to fit the window */
+//			scene2.scaleMode = .AspectFill
+//			
+//			skView2.presentScene(scene2)
+//		}
 	}
 	
 	override func shouldAutorotate() -> Bool {

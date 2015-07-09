@@ -106,6 +106,18 @@ class StartScene: SKScene {
 				if theNode == "startButton" {
 					startButton.alpha = 1.0
 					//self.gameVCDelagate.presentGameViewController()
+					
+					
+						let transition = SKTransition.revealWithDirection(SKTransitionDirection.Down, duration: 1.0)
+						
+						let scene = GameScene.unarchiveFromFile("GameScene")! as! GameScene
+						scene.scaleMode = SKSceneScaleMode.AspectFill
+						
+						self.scene!.view!.presentScene(scene, transition: transition)
+					
+				
+		
+			
 				}else if theNode == "scoreButton" {
 					scoreButton.alpha = 1.0
 					//self.gameVCDelagate.presentGameViewController()

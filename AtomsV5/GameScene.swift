@@ -71,6 +71,7 @@ let blueCornerFinalPoint = CGPointMake(15, 15)
 let redCornerFinalPoint = CGPointMake(370, 650)
 var toPulseRedCorner: Int! = 0
 
+
 class GameScene: SKScene, SKPhysicsContactDelegate {
 	
 	override func didMoveToView(view: SKView) {
