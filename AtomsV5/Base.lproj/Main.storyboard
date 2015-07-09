@@ -10,10 +10,10 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Start View Controller-->
+        <!--View Controller-->
         <scene sceneID="Y01-sj-FbZ">
             <objects>
-                <viewController id="uIw-gc-B1f" customClass="StartViewController" customModule="AtomsV5" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uIw-gc-B1f" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mWz-Q0-932"/>
                         <viewControllerLayoutGuide type="bottom" id="oLS-Kq-Bcl"/>
@@ -21,11 +21,21 @@
                     <view key="view" contentMode="scaleToFill" id="HSM-EN-ev3" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ts6-zJ-EXQ">
+                                <rect key="frame" x="277" y="337" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="presentation" id="itQ-76-oUT"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ts6-zJ-EXQ" firstAttribute="centerX" secondItem="HSM-EN-ev3" secondAttribute="centerX" id="8gp-Kq-P3j"/>
+                            <constraint firstItem="oLS-Kq-Bcl" firstAttribute="top" secondItem="Ts6-zJ-EXQ" secondAttribute="bottom" constant="315" id="HmK-W1-3ZA"/>
+                        </constraints>
                     </view>
-                    <connections>
-                        <segue destination="BV1-FR-VrT" kind="presentation" identifier="startToGameSegue" id="ZoS-wL-mTZ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyb-mY-cQe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,6 +81,7 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="433" y="429"/>
         </scene>
     </scenes>
 </document>

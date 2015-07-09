@@ -26,7 +26,8 @@ class StartScene: SKScene {
 		let actionDelta2 = SKAction.moveByX(4*endX, y: 0, duration: 0.6)
 		let actionDelta3 = SKAction.moveByX(6*endX, y: 0, duration: 0.9)
 		let actionDelta4 = SKAction.moveByX(8*endX, y: 0, duration: 1.2)
-		let nodeFade = SKAction.fadeAlphaTo(0.7, duration: 2)
+		let nodeFade = SKAction.fadeAlphaTo(0.7, duration: 1.0)
+		let actionWaitDot = SKAction.waitForDuration(0.25)
 		
 		let titleDot5 = SKSpriteNode(imageNamed: "TitleDot5")
 		titleDot5.name = "titleDot5"
@@ -34,8 +35,7 @@ class StartScene: SKScene {
 		titleDot5.xScale = scale
 		titleDot5.yScale = scale
 		titleDot5.alpha = 0.1
-		titleDot5.runAction(actionDelta4)
-		titleDot5.runAction(nodeFade)
+		titleDot5.runAction(SKAction.sequence([actionWaitDot, actionDelta4, nodeFade]))
 		self.addChild(titleDot5)
 		
 		let titleDot4 = SKSpriteNode(imageNamed: "TitleDot4")
@@ -44,8 +44,7 @@ class StartScene: SKScene {
 		titleDot4.xScale = scale
 		titleDot4.yScale = scale
 		titleDot4.alpha = 0.1
-		titleDot4.runAction(actionDelta3)
-		titleDot4.runAction(nodeFade)
+		titleDot4.runAction(SKAction.sequence([actionWaitDot, actionDelta3, nodeFade]))
 		self.addChild(titleDot4)
 		
 		let titleDot3 = SKSpriteNode(imageNamed: "TitleDot3")
@@ -54,8 +53,7 @@ class StartScene: SKScene {
 		titleDot3.xScale = scale
 		titleDot3.yScale = scale
 		titleDot3.alpha = 0.1
-		titleDot3.runAction(actionDelta2)
-		titleDot3.runAction(nodeFade)
+		titleDot3.runAction(SKAction.sequence([actionWaitDot, actionDelta2, nodeFade]))
 		self.addChild(titleDot3)
 		
 		let titleDot2 = SKSpriteNode(imageNamed: "TitleDot2")
@@ -64,8 +62,7 @@ class StartScene: SKScene {
 		titleDot2.xScale = scale
 		titleDot2.yScale = scale
 		titleDot2.alpha = 0.1
-		titleDot2.runAction(actionDelta)
-		titleDot2.runAction(nodeFade)
+		titleDot2.runAction(SKAction.sequence([actionWaitDot, actionDelta, nodeFade]))
 		self.addChild(titleDot2)
 		
 		let titleDot1 = SKSpriteNode(imageNamed: "TitleDot1")
@@ -74,7 +71,7 @@ class StartScene: SKScene {
 		titleDot1.xScale = scale
 		titleDot1.yScale = scale
 		titleDot1.alpha = 0.1
-		titleDot1.runAction(nodeFade)
+		titleDot1.runAction(SKAction.sequence([actionWaitDot, nodeFade]))
 		self.addChild(titleDot1)
 		
 		startButton.name = "startButton"
@@ -82,7 +79,7 @@ class StartScene: SKScene {
 		startButton.xScale = 0.06
 		startButton.yScale = 0.06
 		startButton.alpha = 0
-		let actionWait = SKAction.waitForDuration(0.4)
+		let actionWait = SKAction.waitForDuration(0.74)
 		let startAction = SKAction.moveToY(3.1*self.frame.height/7, duration: 0.6)
 		startButton.runAction(SKAction.sequence([actionWait, startAction, nodeFade]))
 		self.addChild(startButton)
@@ -108,7 +105,7 @@ class StartScene: SKScene {
 			if let theNode = self.nodeAtPoint(location).name{
 				if theNode == "startButton" {
 					startButton.alpha = 1.0
-					self.gameVCDelagate.presentGameViewController()
+					//self.gameVCDelagate.presentGameViewController()
 				}else if theNode == "scoreButton" {
 					scoreButton.alpha = 1.0
 					//self.gameVCDelagate.presentGameViewController()
