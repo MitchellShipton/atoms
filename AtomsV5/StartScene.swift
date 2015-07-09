@@ -93,10 +93,7 @@ class StartScene: SKScene {
 		scoreButton.runAction(SKAction.sequence([actionWait, scoreAction, nodeFade]))
 		self.addChild(scoreButton)
 	}
-	
-	override func update(currentTime: CFTimeInterval) {
-	}
-	
+		
 	var gameVCDelagate = StartViewController()
 	
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -105,22 +102,8 @@ class StartScene: SKScene {
 			if let theNode = self.nodeAtPoint(location).name{
 				if theNode == "startButton" {
 					startButton.alpha = 1.0
-					//self.gameVCDelagate.presentGameViewController()
-					
-					
-						let transition = SKTransition.revealWithDirection(SKTransitionDirection.Down, duration: 1.0)
-						
-						let scene = GameScene.unarchiveFromFile("GameScene")! as! GameScene
-						scene.scaleMode = SKSceneScaleMode.AspectFill
-						
-						self.scene!.view!.presentScene(scene, transition: transition)
-					
-				
-		
-			
 				}else if theNode == "scoreButton" {
 					scoreButton.alpha = 1.0
-					//self.gameVCDelagate.presentGameViewController()
 				}
 			}
 		}
@@ -130,6 +113,27 @@ class StartScene: SKScene {
 	override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
 		startButton.alpha = 0.7
 		scoreButton.alpha = 0.7
+		
+		if let touch = touches.first {
+			let location = touch.locationInNode(self)
+			if let theNode = self.nodeAtPoint(location).name{
+				if theNode == "startButton" {
+					let revealWait = SKAction.waitForDuration(0.0)
+					let revealAction = SKAction.runBlock({ () -> Void in
+						let transition = SKTransition.revealWithDirection(SKTransitionDirection.Down, duration: 1.0)
+						
+						let scene = GameScene.unarchiveFromFile("GameScene")! as! GameScene
+						scene.scaleMode = SKSceneScaleMode.AspectFill
+						
+						self.scene!.view!.presentScene(scene, transition: transition)
+					})
+					startButton.runAction(SKAction.sequence([revealWait, revealAction]))
+					
+				}else if theNode == "scoreButton" {
+					
+				}
+			}
+		}
 	}
 
 	func setupScene(){

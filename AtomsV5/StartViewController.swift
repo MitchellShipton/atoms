@@ -50,24 +50,6 @@ class StartViewController: UIViewController {
 		
 	}
 	
-	func presentGameViewController(){
-		//self.performSegueWithIdentifier("startToGameSegue", sender: self)
-//		if let scene2 = GameScene(fileNamed:"GameScene") {
-//			// Configure the view.
-//			let skView2 = self.view as! SKView
-//			skView2.showsFPS = false
-//			skView2.showsNodeCount = false
-//			
-//			/* Sprite Kit applies additional optimizations to improve rendering performance */
-//			skView2.ignoresSiblingOrder = true
-//			
-//			/* Set the scale mode to scale to fit the window */
-//			scene2.scaleMode = .AspectFill
-//			
-//			skView2.presentScene(scene2)
-//		}
-	}
-	
 	override func shouldAutorotate() -> Bool {
 		return true
 	}
