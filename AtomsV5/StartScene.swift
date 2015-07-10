@@ -93,8 +93,6 @@ class StartScene: SKScene {
 		scoreButton.runAction(SKAction.sequence([actionWait, scoreAction, nodeFade]))
 		self.addChild(scoreButton)
 	}
-		
-	var gameVCDelagate = StartViewController()
 	
 	override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
 		if let touch = touches.first {
@@ -121,10 +119,8 @@ class StartScene: SKScene {
 					let revealWait = SKAction.waitForDuration(0.0)
 					let revealAction = SKAction.runBlock({ () -> Void in
 						let transition = SKTransition.revealWithDirection(SKTransitionDirection.Down, duration: 1.0)
-						
 						let scene = GameScene.unarchiveFromFile("GameScene")! as! GameScene
 						scene.scaleMode = SKSceneScaleMode.AspectFill
-						
 						self.scene!.view!.presentScene(scene, transition: transition)
 					})
 					startButton.runAction(SKAction.sequence([revealWait, revealAction]))
